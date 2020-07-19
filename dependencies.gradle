@@ -1,0 +1,233 @@
+project.ext {
+    minSdkVersion = 23
+    targetSdkVersion = 29
+    compileSdkVersion = 29
+
+    versionCode = 1
+    versionName = '0.1.0'
+
+    appcompat = '1.1.0'
+    recyclerView = '1.1.0'
+    fragmentKtx = '1.2.5'
+    activityKtx = '1.1.0'
+    lifecycle = '2.2.0'
+    constraintLayout = '1.1.3'
+    ktxVersion = "1.3.0"
+    ktxAnnotation = "1.1.0"
+    material = '1.1.0'
+
+    kotlin = '1.3.61'
+
+    coroutines = '1.3.7'
+    coroutinesTest = '1.3.7'
+
+    moshi = '1.9.3'
+    moshiConverter = '2.5.0'
+    retrofit = '2.6.0'
+    okHttp = '3.12.1'
+    okHttpLogginInterceptor = '3.12.1'
+
+    timber = '4.7.1'
+    threetenabp = '1.2.2'
+
+    dagger = '2.27'
+
+    navigationVersion = '2.2.0'
+
+
+    junit = '4.12'
+    mockk = '1.9.3'
+
+    picasso = '2.71828'
+
+    crypto = '1.0.0-rc02'
+
+    AppDependencies = [
+            testImplementation       : [
+                    'junit:junit:' + junit,
+            ],
+            androidTestImplementation: [
+
+            ],
+            implementation           : [
+                    project(':core'),
+                    project(':presenter'),
+                    fileTree(dir: 'libs', include: ['*.jar']),
+                    'androidx.appcompat:appcompat:' + appcompat,
+                    'androidx.appcompat:appcompat-resources:' + appcompat,
+                    'androidx.lifecycle:lifecycle-viewmodel:' + lifecycle,
+                    'androidx.lifecycle:lifecycle-extensions:' + lifecycle,
+                    'androidx.recyclerview:recyclerview:' + recyclerView,
+                    'androidx.constraintlayout:constraintlayout:' + constraintLayout,
+                    'androidx.activity:activity-ktx:' + activityKtx,
+                    'androidx.fragment:fragment-ktx:' + fragmentKtx,
+                    'com.squareup.moshi:moshi-kotlin:' + moshi,
+                    'com.squareup.moshi:moshi-adapters:' + moshi,
+                    'com.squareup.retrofit2:converter-moshi:' + moshiConverter,
+                    'com.squareup.retrofit2:retrofit:' + retrofit,
+                    'com.squareup.okhttp3:okhttp:' + okHttp,
+                    'com.squareup.okhttp3:logging-interceptor:' + okHttpLogginInterceptor,
+                    'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + kotlin,
+                    'org.jetbrains.kotlin:kotlin-stdlib:' + kotlin,
+                    'org.jetbrains.kotlin:kotlin-reflect:' + kotlin,
+                    'androidx.navigation:navigation-runtime-ktx:' + navigationVersion,
+                    'androidx.navigation:navigation-fragment-ktx:' + navigationVersion,
+                    'androidx.navigation:navigation-ui-ktx:' + navigationVersion,
+                    'com.jakewharton.timber:timber:' + timber,
+                    'com.jakewharton.threetenabp:threetenabp:' + threetenabp,
+                    'com.google.dagger:dagger:' + dagger,
+                    'com.google.dagger:dagger-android-support:' + dagger,
+                    'com.google.android.material:material:' + material,
+                    'com.squareup.picasso:picasso:' + picasso
+                    ],
+            api                      : [
+            ],
+            kapt                     : [
+                    'androidx.lifecycle:lifecycle-compiler:' + lifecycle,
+                    'com.google.dagger:dagger-compiler:' + dagger,
+                    'com.google.dagger:dagger-android-processor:' + dagger,
+                    'com.squareup.moshi:moshi-kotlin-codegen:' + moshi
+
+            ],
+            compileOnly              : [
+
+            ]
+            ]
+
+    coreDependencies = [
+            testImplementation       : [
+                    'io.mockk:mockk:' + mockk,
+                    'org.jetbrains.kotlinx:kotlinx-coroutines-test:' + coroutinesTest
+            ],
+            androidTestImplementation: [
+
+            ],
+            implementation           : [
+                    project(':presenter'),
+                    fileTree(dir: 'libs', include: ['*.jar']),
+                    'androidx.appcompat:appcompat:' + appcompat,
+                    'androidx.appcompat:appcompat-resources:' + appcompat,
+                    'androidx.lifecycle:lifecycle-viewmodel:' + lifecycle,
+                    'androidx.lifecycle:lifecycle-extensions:' + lifecycle,
+                    'androidx.recyclerview:recyclerview:' + recyclerView,
+                    'androidx.constraintlayout:constraintlayout:' + constraintLayout,
+                    'androidx.activity:activity-ktx:' + activityKtx,
+                    'androidx.fragment:fragment-ktx:' + fragmentKtx,
+                    'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + kotlin,
+                    'org.jetbrains.kotlin:kotlin-stdlib:' + kotlin,
+                    'org.jetbrains.kotlin:kotlin-reflect:' + kotlin,
+                    'androidx.core:core-ktx:' + ktxVersion,
+                    'androidx.navigation:navigation-fragment-ktx:' + navigationVersion,
+                    'androidx.navigation:navigation-ui-ktx:' + navigationVersion,
+                    'com.jakewharton.timber:timber:' + timber,
+                    'com.google.dagger:dagger:' + dagger,
+                    'com.google.dagger:dagger-android-support:' + dagger
+            ],
+            api                      : [
+            ],
+            kapt                     : [
+                    'androidx.lifecycle:lifecycle-compiler:' + lifecycle,
+                    'com.google.dagger:dagger-compiler:' + dagger,
+                    'com.google.dagger:dagger-android-processor:' + dagger
+
+            ],
+            compileOnly              : [
+
+            ]
+    ]
+
+    presenterDependencies = [
+            testImplementation       : [
+                    'junit:junit:' + junit,
+                    'io.mockk:mockk:' + mockk,
+                    'org.jetbrains.kotlinx:kotlinx-coroutines-test:' + coroutinesTest
+            ],
+            androidTestImplementation: [
+
+            ],
+            implementation           : [
+                    fileTree(dir: 'libs', include: ['*.jar']),
+                    'androidx.lifecycle:lifecycle-viewmodel:' + lifecycle,
+                    'com.jakewharton.timber:timber:' + timber,
+                    'com.google.dagger:dagger:' + dagger,
+                    'org.jetbrains.kotlinx:kotlinx-coroutines-core:' + coroutines,
+                    'org.jetbrains.kotlinx:kotlinx-coroutines-android:' + coroutines
+            ],
+            api                      : [
+                    project(':domain')
+            ],
+            kapt                     : [
+                    'com.google.dagger:dagger-compiler:' + dagger
+
+            ],
+            compileOnly              : [
+
+            ]
+    ]
+
+    domainDependencies = [
+            testImplementation       : [
+                    'junit:junit:' + junit,
+                    'io.mockk:mockk:' + mockk,
+                    'org.jetbrains.kotlinx:kotlinx-coroutines-test:' + coroutinesTest
+            ],
+            androidTestImplementation: [
+
+            ],
+            implementation           : [
+                    fileTree(dir: 'libs', include: ['*.jar']),
+                    'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + kotlin,
+                    'org.jetbrains.kotlin:kotlin-stdlib:' + kotlin,
+                    'com.jakewharton.timber:timber:' + timber,
+                    'org.jetbrains.kotlinx:kotlinx-coroutines-core:' + coroutines,
+                    'org.jetbrains.kotlinx:kotlinx-coroutines-android:' + coroutines,
+                    'com.google.dagger:dagger:' + dagger,
+                    'androidx.annotation:annotation:' + ktxAnnotation
+            ],
+            api                      : [
+                    project(':data')
+            ],
+            kapt                     : [
+                    'com.google.dagger:dagger-compiler:' + dagger
+
+            ],
+            compileOnly              : [
+
+            ]
+    ]
+    dataDependencies = [
+            testImplementation       : [
+                    'junit:junit:' + junit,
+                    'io.mockk:mockk:' + mockk,
+                    'org.jetbrains.kotlinx:kotlinx-coroutines-test:' + coroutinesTest
+            ],
+            androidTestImplementation: [
+
+            ],
+            implementation           : [
+                    fileTree(dir: 'libs', include: ['*.jar']),
+                    'com.squareup.moshi:moshi-kotlin:' + moshi,
+                    'com.squareup.moshi:moshi-adapters:' + moshi,
+                    'com.squareup.retrofit2:converter-moshi:' + moshiConverter,
+                    'com.squareup.retrofit2:retrofit:' + retrofit,
+                    'com.squareup.okhttp3:okhttp:' + okHttp,
+                    'com.squareup.okhttp3:logging-interceptor:' + okHttpLogginInterceptor,
+                    'com.jakewharton.timber:timber:' + timber,
+                    'com.jakewharton.threetenabp:threetenabp:' + threetenabp,
+                    'com.google.dagger:dagger:' + dagger,
+                    'androidx.core:core-ktx:' + ktxVersion,
+                    'androidx.annotation:annotation:' + appcompat,
+                    'androidx.security:security-crypto:' + crypto
+            ],
+            api                      : [
+            ],
+            kapt                     : [
+                    'com.squareup.moshi:moshi-kotlin-codegen:' + moshi,
+                    'com.google.dagger:dagger-compiler:' + dagger,
+                    'com.google.dagger:dagger-android-processor:' + dagger
+            ],
+            compileOnly              : [
+
+            ]
+    ]
+}

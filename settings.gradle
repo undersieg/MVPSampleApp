@@ -1,0 +1,6 @@
+include ':core'
+include ':presenter'
+include ':domain'
+include ':data'
+include ':app'
+rootProject.name = "CV"

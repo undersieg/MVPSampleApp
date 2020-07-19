@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_200">200dp</dimen>
+    <dimen name="size_300">300dp</dimen>
+
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+
+    <dimen name="textsize_10sp">10sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+
+    <dimen name="image_size_100">100dp</dimen>
+    <dimen name="image_size_200">200dp</dimen>
+    <dimen name="bottomGap">50dp</dimen>
+</resources>

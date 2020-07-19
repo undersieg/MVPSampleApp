@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            debuggable false
+        }
+        debug {
+            debuggable true
+            testCoverageEnabled true
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    testImplementation presenterDependencies.testImplementation
+    androidTestImplementation presenterDependencies.androidTestImplementation
+    implementation presenterDependencies.implementation
+    kapt presenterDependencies.kapt
+    compileOnly presenterDependencies.compileOnly
+    api presenterDependencies.api
+
+}

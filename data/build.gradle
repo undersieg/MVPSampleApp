@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+        }
+        debug {
+            debuggable true
+            testCoverageEnabled true
+        }
+
+        buildTypes.each {
+            it.buildConfigField 'String', 'INFORMATION_LIST_API', '"' + INFORMATION_DOMAIN_API + IMFORMATION_LIST_API + '"'
+            it.buildConfigField 'String', 'INFORMATION_DETAILS_API', '"' + INFORMATION_DOMAIN_API + INFORMATION_DETAILS_API +'"'
+            it.buildConfigField "String", "KEY_PREFERENCES_STORAGE_NAME", KEY_PREFERENCES_STORAGE_NAME
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = 1.8
+    }
+}
+
+dependencies {
+    testImplementation dataDependencies.testImplementation
+    androidTestImplementation dataDependencies.androidTestImplementation
+    implementation dataDependencies.implementation
+    kapt dataDependencies.kapt
+    compileOnly dataDependencies.compileOnly
+    api dataDependencies.api
+
+}
