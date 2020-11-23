@@ -1,4 +1,4 @@
-# Sii-CV
+# MVP Sample App
 
 ## Getting Started
 
